@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: debiankk
+  labels:
+    app: kk
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kk
+  template:
+    metadata:
+      labels:
+        app: kk
+    spec:
+      containers:
+        - name: kk
+          image: debiankk/aria2
+          imagePullPolicy: Always
+          ports:
+            - port: 8080
+              containerPort: 8080
+          resources:
+            requests:
+              cpu: 10m
+              memory: 64Mi
+            limits:
+              cpu: 0.3
+              memory: 128Mi
