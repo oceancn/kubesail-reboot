@@ -20,7 +20,7 @@ jobs:
     - name: go kaishi
       run: |
         #kubectl的配置文件
-        RUN mkdir /home/runner/.kube
+        mkdir /home/runner/.kube
         cat <<-EOF > /home/runner/.kube/config
         ${{ secrets.CONFIG }}
         EOF
