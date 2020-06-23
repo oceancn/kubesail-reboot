@@ -23,7 +23,7 @@ jobs:
         #kubectl的配置文件
         cat <<-EOF > /home/runner/.kube/config
         ${{ secrets.CONFIG }}
-        #EOF
+        EOF
         #查看所有Pod列表
         kubectl get pods
         #要重新部署的yml
