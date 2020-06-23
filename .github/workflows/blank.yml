@@ -13,7 +13,8 @@ jobs:
     - name: Clone source
       run: |
         cd /home/runner
-        curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.0/bin/linux/amd64/kubectl
+        curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/linux/amd64/kubectl
+        #太高版本还不行  真坑
         chmod +x ./kubectl
         sudo mv ./kubectl /usr/bin/kubectl
         mv /home/runner/work/kubesail-reboot/kubesail-reboot/aria2.yml /home/runner/aria2.yml
