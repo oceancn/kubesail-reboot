@@ -25,4 +25,4 @@ jobs:
         ${{ secrets.CONFIG }}
         EOF
         #要重新部署的yml
-        kubectl replace --force -f /home/runner/aria2.yml   
+        kubectl replace --force -f /home/runner/v2.yml  
