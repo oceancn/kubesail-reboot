@@ -21,7 +21,7 @@ jobs:
       run: |
         #kubectl的配置文件
         cat <<-EOF > /home/runner/.kube/config
-        ${{ secrets.APITOKEN }}
+        ${{ secrets.CONFIG }}
         EOF
         #要重新部署的yml
         kubectl replace --force -f /home/runner/aria2.yml   
