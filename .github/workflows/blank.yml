@@ -13,7 +13,7 @@ jobs:
     - name: Clone source
       run: |
         cd /home/runner
-        curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.5/bin/linux/amd64/kubectl
+        curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.9.0/bin/linux/amd64/kubectl
         chmod +x ./kubectl
         sudo mv ./kubectl /usr/bin/kubectl
         mv /home/runner/work/kubesail-reboot/kubesail-reboot/aria2.yml /home/runner/aria2.yml
@@ -27,4 +27,4 @@ jobs:
         #查看所有Pod列表
         kubectl get pods
         #要重新部署的yml
-        kubectl replace --force -f /home/runner/varia2.yml 
+        kubectl replace --force -f /home/runner/aria2.yml 
