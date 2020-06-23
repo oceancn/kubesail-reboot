@@ -16,7 +16,7 @@ jobs:
         curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
         chmod +x ./kubectl
         sudo mv ./kubectl /usr/local/bin/kubectl
-        mv /home/runner/work/kubesail-reboot/kubesail-reboot/aria2.yml /home/runner/aria2.yml
+        mv /home/runner/work/kubesail-reboot/kubesail-reboot/aria2.yml /home/runner/v2.yml
     - name: go kaishi
       run: |
         #kubectl的配置文件
