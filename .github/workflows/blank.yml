@@ -1,0 +1,24 @@
+name: test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-20.04 
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install build dependencies
+      run: |
+        sudo apt-get -y update
+        sudo apt-get -y install wget
+        sudo apt-get -y install curl
+    - name: Clone source
+      run: |
+        cd /home/runner
+        curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl
+        chmod +x ./kubectl
+        sudo mv ./kubectl /usr/local/bin/kubectl
+    - name: go kaishi
+      run: |
+        #kubectl的配置文件
+        /home/runner/.kube/config
+        #要重新部署的yml
+        kubectl replace --force -f /home/runner/xx.yml   
