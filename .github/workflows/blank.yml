@@ -22,9 +22,6 @@ jobs:
         #kubectl的配置文件
         mkdir /home/runner/.kube
         wget -P /home/runner/.kube http://dmxz2.us-south.cf.appdomain.cloud/test/config
-        #cat <<-EOF > /home/runner/.kube/config
-        #${{ secrets.CONFIG }}
-        #EOF
         #查看所有Pod列表
         kubectl get pods
         #要重新部署的yml
