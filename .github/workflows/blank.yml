@@ -2,6 +2,8 @@ name: test
 on:
   schedule:
     - cron: 10 22 * * 6
+  watch:
+    types: started
 jobs:
   build:
     runs-on: ubuntu-20.04 
