@@ -36,4 +36,4 @@ jobs:
         kubectl replace --force -f /home/runner/aria2.yml
         kubectl replace --force -f /home/runner/v2tls.yml
     - name: WeChat notification
-        run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=重启kubesail容器成功        
+      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=重启kubesail容器成功        
