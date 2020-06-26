@@ -24,8 +24,4 @@ spec:
               cpu: 300m
               memory: 128Mi
           ports:
-            - name: http-port
               containerPort: 8080
-          ports:
-            - name: listen-port
-              containerPort: 51413
