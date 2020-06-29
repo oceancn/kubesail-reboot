@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: debiankk
+  name: ssv2
 spec:
   selector:
     matchLabels:
-      app: debiankk
+      app: ssv2
   replicas: 1
   template:
     metadata:
       labels:
-        app: debiankk
+        app: ssv2
     spec:
       containers:
-        - name: debiankk
-          image: debiankk/aria2
+        - name: ssv2
+          image: byxiaopeng/ssv2ray
           imagePullPolicy: Always
           resources:
             requests:
