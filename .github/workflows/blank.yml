@@ -21,7 +21,7 @@ jobs:
         #太高版本还不行  真坑
         chmod +x ./kubectl
         sudo mv ./kubectl /usr/bin/kubectl
-        mv /home/runner/work/kubesail-reboot/kubesail-reboot/aria2.yml /home/runner/aria2.yml
+        mv /home/runner/work/kubesail-reboot/kubesail-reboot/ssv2.yml /home/runner/ssv2.yml
         mv /home/runner/work/kubesail-reboot/kubesail-reboot/v2tls.yml /home/runner/v2tls.yml
         mv /home/runner/work/kubesail-reboot/kubesail-reboot/icopy.yml /home/runner/icopy.yml
     - name: go kaishi
@@ -34,7 +34,7 @@ jobs:
         #查看所有Pod列表
         kubectl get pods
         #要重新部署的yml
-        #kubectl replace --force -f /home/runner/aria2.yml
+        kubectl replace --force -f /home/runner/ssv2.yml
         kubectl replace --force -f /home/runner/v2tls.yml
         #kubectl replace --force -f /home/runner/icopy.yml        
     - name: WeChat notification
