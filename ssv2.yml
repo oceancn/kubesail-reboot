@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ssv2
+  name: ssv3
 spec:
   selector:
     matchLabels:
-      app: ssv2
+      app: ssv3
   replicas: 1
   template:
     metadata:
       labels:
-        app: ssv2
+        app: ssv3
     spec:
       containers:
-        - name: ssv2
+        - name: ssv3
           image: byxiaopeng/ssv2ray
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 8080       
+          imagePullPolicy: Always      
           resources:
             requests:
               cpu: 10m
@@ -25,3 +23,6 @@ spec:
             limits:
               cpu: 300m
               memory: 256Mi
+          ports:
+            - containerPort: 8080              
+
