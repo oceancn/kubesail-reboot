@@ -23,7 +23,6 @@ jobs:
         sudo mv ./kubectl /usr/bin/kubectl
         mv /home/runner/work/kubesail-reboot/kubesail-reboot/ssv2.yml /home/runner/ssv2.yml
         mv /home/runner/work/kubesail-reboot/kubesail-reboot/v2tls.yml /home/runner/v2tls.yml
-        mv /home/runner/work/kubesail-reboot/kubesail-reboot/icopy.yml /home/runner/icopy.yml
     - name: go kaishi
       run: |
         mkdir /home/runner/.kube
@@ -35,7 +34,6 @@ jobs:
         kubectl get pods
         #要重新部署的yml
         kubectl replace --force -f /home/runner/ssv2.yml
-        kubectl replace --force -f /home/runner/v2tls.yml
-        #kubectl replace --force -f /home/runner/icopy.yml        
+        kubectl replace --force -f /home/runner/v2tls.yml       
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=重启kubesail容器成功        
