@@ -18,7 +18,6 @@ jobs:
       run: |
         cd /home/runner
         curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.11/bin/linux/amd64/kubectl
-        #太高版本还不行  真坑
         chmod +x ./kubectl
         sudo mv ./kubectl /usr/bin/kubectl
         mv /home/runner/work/kubesail-reboot/kubesail-reboot/ssv2.yml /home/runner/ssv2.yml
