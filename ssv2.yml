@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ssv3
-          image: byxiaopeng/ssv2ray
+          image: debiankk/ssv2ray
           imagePullPolicy: Always      
           resources:
             requests:
