@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: v2tls
-          image: byxiaopeng/v2tls-docker
+          image: debiankk/v2tls-docker
           imagePullPolicy: Always
           resources:
             requests:
