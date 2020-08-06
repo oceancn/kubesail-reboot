@@ -1,7 +1,7 @@
 name: kubesail-reboot
 on:
-#  schedule:
-#    - cron: 35 21 * * 4
+  schedule:
+    - cron: 35 21 * * 4
   watch:
     types: started
 jobs:
@@ -20,8 +20,6 @@ jobs:
         curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.11/bin/linux/amd64/kubectl
         chmod +x ./kubectl
         sudo mv ./kubectl /usr/bin/kubectl
-        mv /home/runner/work/kubesail-reboot/kubesail-reboot/ssv2.yml /home/runner/ssv2.yml
-        mv /home/runner/work/kubesail-reboot/kubesail-reboot/v2tls.yml /home/runner/v2tls.yml
     - name: go kaishi
       run: |
         mkdir /home/runner/.kube
@@ -30,7 +28,6 @@ jobs:
         EOF
         kubectl version
         kubectl get pods
-        kubectl replace --force -f /home/runner/ssv2.yml
-        kubectl replace --force -f /home/runner/v2tls.yml       
+        kubectl replace --force -f /home/runner/work/kubesail-reboot/kubesail-reboot/gost.yml      
     - name: WeChat notification
       run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=重启kubesail容器成功        
