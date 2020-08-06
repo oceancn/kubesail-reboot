@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ssv3
+  name: gost
 spec:
   selector:
     matchLabels:
-      app: ssv3
+      app: gost
   replicas: 1
   template:
     metadata:
       labels:
-        app: ssv3
+        app: gost
     spec:
       containers:
-        - name: ssv3
-          image: debiankk/ssv2ray
+        - name: gost
+          image: debiankk/gostws
           imagePullPolicy: Always      
           resources:
             requests:
               cpu: 1m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 300m
               memory: 128Mi
           ports:
             - containerPort: 8080              
