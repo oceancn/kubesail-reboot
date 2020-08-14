@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gdbot
-          image: byxiaopeng/gdbot
+          image: debiankk/gdbot
           imagePullPolicy: Always      
           resources:
             requests:
