@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gost
+  name: gdbot
 spec:
   selector:
     matchLabels:
-      app: gost
+      app: gdbot
   replicas: 1
   template:
     metadata:
       labels:
-        app: gost
+        app: gdbot
     spec:
       containers:
-        - name: gost
-          image: debiankk/gostws
+        - name: gdbot
+          image: byxiaopeng/gdbot
           imagePullPolicy: Always      
           resources:
             requests:
@@ -23,6 +23,3 @@ spec:
             limits:
               cpu: 300m
               memory: 128Mi
-          ports:
-            - containerPort: 8080              
-
