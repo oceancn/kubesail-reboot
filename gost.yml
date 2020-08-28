@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gdbot
-          image: debiankk/gdbot
+          image: debiankk/icopy
           imagePullPolicy: Always      
           resources:
             requests:
