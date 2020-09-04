@@ -1,7 +1,7 @@
 name: kubesail-reboot
 on:
   schedule:
-    - cron: 10 1 * * *
+    - cron: 13 1 * * *
   watch:
     types: started
 jobs:
