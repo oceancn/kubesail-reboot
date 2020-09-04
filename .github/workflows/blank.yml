@@ -1,7 +1,7 @@
 name: kubesail-reboot
 on:
   schedule:
-    - cron: 35 21 * * 4
+    - cron: 0 1 * * *
   watch:
     types: started
 jobs:
@@ -28,6 +28,4 @@ jobs:
         EOF
         kubectl version
         kubectl get pods
-        kubectl replace --force -f /home/runner/work/kubesail-reboot/kubesail-reboot/gost.yml      
-    - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.SCKEY }}.send?text=重启kubesail容器成功        
+        kubectl replace --force -f /home/runner/work/kubesail-reboot/kubesail-reboot/gost.yml         
