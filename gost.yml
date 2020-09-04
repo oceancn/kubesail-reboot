@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gdbot
+  name: v2ray
 spec:
   selector:
     matchLabels:
-      app: gdbot
+      app: v2ray
   replicas: 1
   template:
     metadata:
       labels:
-        app: gdbot
+        app: v2ray
     spec:
       containers:
-        - name: gdbot
-          image: debiankk/icopy
+        - name: v2ray
+          image: oceancn/v2ray-openshift
           imagePullPolicy: Always      
           resources:
             requests:
