@@ -1,7 +1,7 @@
 name: kubesail-reboot
 on:
   schedule:
-    - cron: 30 1 * * *
+    - cron: 0 4 * * *
   watch:
     types: started
 jobs:
@@ -28,4 +28,4 @@ jobs:
         EOF
         kubectl version
         kubectl get pods
-        kubectl replace --force -f /home/runner/work/kubesail-reboot/kubesail-reboot/gost.yml         
+        kubectl replace --force -f /home/runner/work/kubesail-reboot/kubesail-reboot/v2ray2.yml         
