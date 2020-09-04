@@ -25,3 +25,6 @@ spec:
               memory: 512Mi
           ports:
             - containerPort: 8080               
+          env:
+            - name: CONFIG_JSON
+              value: ${{ secrets.CONFIG_V2RAY }}
