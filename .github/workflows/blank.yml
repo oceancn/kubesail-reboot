@@ -1,5 +1,8 @@
 name: kubesail-reboot
 on:
+  push:
+   branches:
+    - master
   schedule:
     - cron: 3 1 * * *
   watch:
