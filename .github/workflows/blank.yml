@@ -29,9 +29,6 @@ jobs:
         cat <<-EOF > /home/runner/.kube/config
         ${{ secrets.CONFIG }}
         EOF
-        echo "'" >> /home/runner/work/kubesail-reboot/kubesail-reboot/v2ray2.yml
-        echo ${{ secrets.CONFIG_V2RAY }} >> /home/runner/work/kubesail-reboot/kubesail-reboot/v2ray2.yml
-        echo "'" >> /home/runner/work/kubesail-reboot/kubesail-reboot/v2ray2.yml
         kubectl version
         kubectl get pods
-        kubectl replace --force -f /home/runner/work/kubesail-reboot/kubesail-reboot/v2ray2.yml         
+        kubectl rollout restart Deployment/v2ray   
