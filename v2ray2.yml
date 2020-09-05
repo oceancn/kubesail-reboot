@@ -27,4 +27,4 @@ spec:
             - containerPort: 8080               
           env:
             - name: CONFIG_JSON
-              value: ${{ secrets.CONFIG_V2RAY }}
+              value: config
