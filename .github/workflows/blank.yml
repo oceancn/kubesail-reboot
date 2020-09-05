@@ -1,7 +1,7 @@
 name: kubesail-reboot
 on:
   schedule:
-    - cron: 15 21 * * *
+    - cron: 3 1 * * *
   watch:
     types: started
 jobs:
@@ -26,6 +26,7 @@ jobs:
         cat <<-EOF > /home/runner/.kube/config
         ${{ secrets.CONFIG }}
         EOF
+        sed -i 's/value: config/${{ secrets.CONFIG_V2RAY }}/g' /home/runner/work/kubesail-reboot/kubesail-reboot/v2ray2.yml
         kubectl version
         kubectl get pods
         kubectl replace --force -f /home/runner/work/kubesail-reboot/kubesail-reboot/v2ray2.yml         
