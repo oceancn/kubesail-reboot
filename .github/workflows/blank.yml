@@ -1,12 +1,4 @@
 name: kubesail-reboot
-on:
-  push:
-   branches:
-    - master
-  schedule:
-    - cron: 3 21 * * *
-  watch:
-    types: started
 jobs:
   build:
     runs-on: ubuntu-20.04 
